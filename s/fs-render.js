@@ -9,7 +9,7 @@ void main() {
  vec4 s = texture2D( sprite , vec2( gl_PointCoord.x , 1.0 - gl_PointCoord.y) );
  
  
-  gl_FragColor = vec4( s.xyz * vVel ,s.w * min( .5 , life ) );
+  gl_FragColor = vec4( s.xyz * abs(normalize(vVel)) * abs(normalize(vPos)) ,s.w );
 
 }
 
